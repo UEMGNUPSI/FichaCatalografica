@@ -190,6 +190,7 @@ public class PrincipalView extends javax.swing.JFrame {
         tfdPalavra3 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         pnlSobre = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -578,15 +579,17 @@ public class PrincipalView extends javax.swing.JFrame {
 
         pnlComGuia.addTab("MFC", pnlFichaCalatografica);
 
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/Sobre.png"))); // NOI18N
+
         javax.swing.GroupLayout pnlSobreLayout = new javax.swing.GroupLayout(pnlSobre);
         pnlSobre.setLayout(pnlSobreLayout);
         pnlSobreLayout.setHorizontalGroup(
             pnlSobreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1030, Short.MAX_VALUE)
+            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnlSobreLayout.setVerticalGroup(
             pnlSobreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 479, Short.MAX_VALUE)
+            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pnlComGuia.addTab("Sobre", null, pnlSobre, "");
@@ -596,9 +599,9 @@ public class PrincipalView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(pnlComGuia, javax.swing.GroupLayout.PREFERRED_SIZE, 1035, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -650,16 +653,32 @@ public class PrincipalView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfdNomeActionPerformed
      public void gerarDocumento() throws IOException, DocumentException{
-         
+        
         File pdf = null;
         JFileChooser chooser = null;
         
         doc = new Document(PageSize.A4);
-        
-        Scanner sc = new Scanner (tfdNome.getText());
+        String NomeCompleto = tfdNome.getText();
+        int cont = 0, i;
+        for( i = 0; i < NomeCompleto.length(); i++){
+            if(NomeCompleto.charAt(i) == ' '){
+                cont++;
+            }
+        }
+       Scanner sc = new Scanner (tfdNome.getText());
         String sobrenome = sc.nextLine();
         String[] array = sobrenome.split(" ");
         sobrenome = array[array.length - 1];
+        
+        
+   
+        String PrimeiroNome ="";
+        String[] arraynome = NomeCompleto.split(" ");
+        for( i = 1; i <cont; i++){
+            PrimeiroNome += arraynome[array.length + i];
+        }
+
+        
         try {
             pdf = File.createTempFile(tfdNome.getText()+" "+sobrenome,"");            
         } catch (IOException e1) {            
@@ -825,6 +844,7 @@ public class PrincipalView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
