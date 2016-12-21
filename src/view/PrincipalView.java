@@ -579,7 +579,7 @@ public class PrincipalView extends javax.swing.JFrame {
 
         pnlComGuia.addTab("MFC", pnlFichaCalatografica);
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/Sobre.png"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/sobre2.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlSobreLayout = new javax.swing.GroupLayout(pnlSobre);
         pnlSobre.setLayout(pnlSobreLayout);
