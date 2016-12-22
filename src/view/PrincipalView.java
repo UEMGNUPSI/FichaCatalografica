@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
 import com.itextpdf.text.Document;
@@ -55,60 +50,44 @@ public class PrincipalView extends javax.swing.JFrame {
     public PrincipalView() {
         initComponents();
         this.setVisible(true);
-       // this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setLocationRelativeTo(null);
         colocaDicas();
         preencheComboBox();
-        preenche();
-          //JOptionPane.showMessageDialog(null, cbxTrabalho.getSelectedItem());
-          //JOptionPane.showMessageDialog(null, grupoBotao.getSelection());
-          //JOptionPane.showMessageDialog(null, );
-          //JOptionPane.showMessageDialog(null, rbnEspecializacao.getText());
-
     }
 
-    public void preenche(){
-        tfdNome.setText("Danilo vieira");
-        tfdSobrenome.setText("Bernardes");
-        tfdTitulo.setText("Realidade aumentada para computadores e ventiladores usando a galera do nupsi pra fazer merda");
-        tfdAno.setText("2016");
-        tfdNumPaginas.setText("22");
-        tfdOrientador.setText("Leonardo vieira ") ;
-        tfdSobrenomeOrientador.setText("Barcelos");
-        cbxTrabalho.setSelectedIndex(2);
-        cbxCurso.setSelectedIndex(2);
-        tfdPalavra1.setText("Ventiladores");
-    }
+
     public void LimitaDigitos(){
          tfdNome.setDocument(new LimiteDigitos(60));
-         tfdSobrenome.setDocument(new LimiteDigitos((30)));
          tfdAutor2.setDocument(new LimiteDigitos(60));
          tfdAutor3.setDocument(new LimiteDigitos(60));
          tfdTitulo.setDocument(new LimiteDigitos(60));
          tfdSubTitulo.setDocument(new LimiteDigitos(60));
          tfdAno.setDocument(new LimiteDigitos(4));
          tfdOrientador.setDocument(new LimiteDigitos(60));
-         tfdSobrenomeOrientador.setDocument(new LimiteDigitos(40));
          tfdCoorientador.setDocument(new LimiteDigitos(60));
          tfdNome.setDocument(new LimiteDigitos(60));
          tfdPalavra1.setDocument(new LimiteDigitos(60));
          tfdPalavra2.setDocument(new LimiteDigitos(60));
          tfdPalavra3.setDocument(new LimiteDigitos(60));
-         
     }
     
     public void colocaDicas(){
        //SetToolTipText em todos os campos para caso haja dúvidas (não deixei no painel para não deixar poluído)
-       tfdNome.setToolTipText("Digite o nome do autor 1, Exemplo: Leopoldo Ferreira de");
-       tfdSobrenome.setToolTipText("Digite o sobrenome do autor 1, Exemplo: Paula");
+       tfdNome.setToolTipText("Digite o nome do autor 1. Exemplo: Leandro Matias Baldo");
        tfdAutor2.setToolTipText("Digite o nome completo do autor 2.");
-       tfdAutor2.setToolTipText("Digite o nome completo do autor 3.");
+       tfdAutor3.setToolTipText("Digite o nome completo do autor 3.");
+       tfdOrientador.setToolTipText("Digite o nome completo do Orientador. Exemplo: Leonardo Vieira Barcelos");
+       tfdCoorientador.setToolTipText("Digite o nome completo do Orientador. Exemplo: Ivan Filho Reis");
+       ckxOrientadora.setToolTipText("Caso seja Orientadora, selecione esta opção.");
+       ckxCoorientadora.setToolTipText("Caso seja Coorientadora, selecione esta opção.");
        ckxMaisAutores.setToolTipText("Caso haja mais autores, selecione esta opção.");
-       tfdTitulo.setToolTipText("Digite o Título de seu trabalho, Exemplo: ASPECTOS QUE... Caixa Alta??" );
-       tfdSubTitulo.setToolTipText("Digite o Título de seu trabalho, Exemplo: BlaBlá... Caixa Alta??" );
-       tfdAno.setToolTipText("Informe o Ano");
-       cbxCurso.setToolTipText("Selecione aqui sua graduação");
-       tfdNumPaginas.setToolTipText("Numero de páginas em seu trabalho");
+       tfdTitulo.setToolTipText("Digite o Título de seu trabalho, Exemplo: Aspectos que envolvem...." );
+       tfdSubTitulo.setToolTipText("Digite o SubTítulo de seu trabalho, Exemplo: Ensino e aprendizagem...." );
+       tfdAno.setToolTipText("Informe o Ano.");
+       cbxCurso.setToolTipText("Selecione aqui sua graduação.");
+       tfdNumPaginas.setToolTipText("Numero de páginas em seu trabalho.");
        cbxIlustracao.setToolTipText("Seu trabalho possui imagens?");
+       cbxTrabalho.setToolTipText("Selecione o tipo do seu trabalho.");
        
     }
     
@@ -144,15 +123,12 @@ public class PrincipalView extends javax.swing.JFrame {
         pnlComGuia = new javax.swing.JTabbedPane();
         pnlFichaCalatografica = new javax.swing.JPanel();
         btnGerarFicha = new javax.swing.JToggleButton();
-        jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         tfdNome = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        tfdSobrenome = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         tfdAutor2 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         tfdAutor3 = new javax.swing.JTextField();
@@ -161,8 +137,6 @@ public class PrincipalView extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         tfdOrientador = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        tfdSobrenomeOrientador = new javax.swing.JTextField();
         ckxOrientadora = new javax.swing.JCheckBox();
         jLabel21 = new javax.swing.JLabel();
         tfdCoorientador = new javax.swing.JTextField();
@@ -190,7 +164,7 @@ public class PrincipalView extends javax.swing.JFrame {
         tfdPalavra3 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         pnlSobre = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -205,8 +179,6 @@ public class PrincipalView extends javax.swing.JFrame {
                 btnGerarFichaActionPerformed(evt);
             }
         });
-
-        jLabel8.setText("Não consegue visualizar o arquivo gerado? abra o LEIA-ME na pasta de instalação.");
 
         jLabel22.setText("Dúvidas? Mantenha o mouse sobre");
 
@@ -247,10 +219,7 @@ public class PrincipalView extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1.setText("*Nome Autor 1:");
-
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel2.setText("*Sobrenome do Autor 1:");
+        jLabel1.setText("*Nome Compledo do Autor 1:");
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel9.setText("Nome Completo do Autor 2:");
@@ -270,22 +239,24 @@ public class PrincipalView extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(tfdSobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tfdAutor2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(ckxMaisAutores)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap(20, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(79, 79, 79)
-                        .addComponent(jLabel14))
-                    .addComponent(ckxMaisAutores)
+                        .addComponent(jLabel14)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(tfdAutor2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(tfdAutor3, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(tfdAutor3, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,20 +264,16 @@ public class PrincipalView extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfdSobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel9))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfdAutor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfdAutor3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                    .addComponent(tfdAutor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfdAutor3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
                 .addComponent(ckxMaisAutores, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -322,9 +289,6 @@ public class PrincipalView extends javax.swing.JFrame {
                 tfdOrientadorActionPerformed(evt);
             }
         });
-
-        jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel10.setText("*Sobrenome:");
 
         ckxOrientadora.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         ckxOrientadora.setText("Orietadora");
@@ -344,41 +308,34 @@ public class PrincipalView extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ckxOrientadora)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(tfdOrientador, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ckxOrientadora))
                     .addComponent(jLabel21)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(tfdCoorientador, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tfdOrientador, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ckxCoorientadora)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(tfdSobrenomeOrientador, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(tfdCoorientador, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ckxCoorientadora))
+                    .addComponent(jLabel20))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel10))
-                .addGap(8, 8, 8)
+                .addComponent(jLabel20)
+                .addGap(6, 6, 6)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfdOrientador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfdSobrenomeOrientador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ckxOrientadora)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                    .addComponent(ckxOrientadora))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel21)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfdCoorientador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ckxCoorientadora))
-                .addContainerGap())
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(10, 154, 193)), "Informações do Trabalho", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
@@ -442,7 +399,7 @@ public class PrincipalView extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addGap(0, 128, Short.MAX_VALUE))
+                                .addGap(0, 111, Short.MAX_VALUE))
                             .addComponent(tfdTitulo))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -538,24 +495,19 @@ public class PrincipalView extends javax.swing.JFrame {
         pnlFichaCalatograficaLayout.setHorizontalGroup(
             pnlFichaCalatograficaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlFichaCalatograficaLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(pnlFichaCalatograficaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlFichaCalatograficaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(pnlFichaCalatograficaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlFichaCalatograficaLayout.createSequentialGroup()
-                                .addGroup(pnlFichaCalatograficaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(pnlFichaCalatograficaLayout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(185, 185, 185)
-                                .addComponent(btnGerarFicha, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGroup(pnlFichaCalatograficaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(13, 13, 13)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pnlFichaCalatograficaLayout.createSequentialGroup()
-                        .addGap(298, 298, 298)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(185, 185, 185)
+                        .addComponent(btnGerarFicha, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         pnlFichaCalatograficaLayout.setVerticalGroup(
@@ -572,24 +524,24 @@ public class PrincipalView extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(btnGerarFicha))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel8)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pnlComGuia.addTab("MFC", pnlFichaCalatografica);
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/sobre2.png"))); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/SobreDefin.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlSobreLayout = new javax.swing.GroupLayout(pnlSobre);
         pnlSobre.setLayout(pnlSobreLayout);
         pnlSobreLayout.setHorizontalGroup(
             pnlSobreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 1030, Short.MAX_VALUE)
         );
         pnlSobreLayout.setVerticalGroup(
             pnlSobreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pnlSobreLayout.createSequentialGroup()
+                .addComponent(jLabel18)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pnlComGuia.addTab("Sobre", null, pnlSobre, "");
@@ -615,25 +567,46 @@ public class PrincipalView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGerarFichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarFichaActionPerformed
-
-        if (tfdNome.getText().isEmpty() || tfdTitulo.getText().isEmpty()
+ if (tfdNome.getText().isEmpty() || tfdTitulo.getText().isEmpty()
                  || tfdAno.getText().isEmpty()  || tfdNumPaginas.getText().isEmpty()|| tfdOrientador.getText().isEmpty() 
-                 || tfdSobrenomeOrientador.getText().isEmpty()|| cbxTrabalho.getSelectedIndex() == 0  || cbxCurso.getSelectedIndex() == 0 
-                 || tfdPalavra1.getText().isEmpty()) {
+                 || cbxTrabalho.getSelectedIndex() == 0  || cbxCurso.getSelectedIndex() == 0 
+                 || tfdPalavra1.getText().isEmpty()) 
+        {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
-        }else{
-            String nomediretorio = null;
-        String nomepasta = "Ficha Catalografica"; // Informa o nome da pasta que armazenará o relatório
-        String separador = java.io.File.separator;
-        try {
-            nomediretorio = caminho + separador + nomepasta;
-            if (!new File(nomediretorio).exists()) {
-                (new File(nomediretorio)).mkdir();
-            }
-           gerarDocumento();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+        else
+        {
+            String nomediretorio = null;
+            String nomepasta = "Ficha Catalografica"; // Informa o nome da pasta que armazenará o relatório
+            String separador = java.io.File.separator;
+            try 
+            {
+                nomediretorio = caminho + separador + nomepasta;
+                
+                String Nome = tfdNome.getText();
+                String Orientador = tfdOrientador.getText();
+                if (!new File(nomediretorio).exists()) 
+                {
+                    (new File(nomediretorio)).mkdir();
+                }
+                
+                if(Nome.charAt(Nome.length()-1) != ' ')
+                {
+                    if(Orientador.charAt(Orientador.length()-1) != ' '){
+                        gerarDocumento();
+                    }
+                    else{
+                    JOptionPane.showMessageDialog( null, "Remova o espaço depois do seu ultimo nome do orientador!");
+                    }
+                }   
+                else{
+                    JOptionPane.showMessageDialog( null, "Remova o espaço depois do seu ultimo nome do aluno!");
+                }
+
+            } catch (Exception e) 
+            {
+                e.printStackTrace();
+            }
         }
     }//GEN-LAST:event_btnGerarFichaActionPerformed
 
@@ -652,39 +625,48 @@ public class PrincipalView extends javax.swing.JFrame {
     private void tfdNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfdNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfdNomeActionPerformed
-     public void gerarDocumento() throws IOException, DocumentException{
+      public void gerarDocumento() throws IOException, DocumentException{
         
         File pdf = null;
         JFileChooser chooser = null;
         
         doc = new Document(PageSize.A4);
+        
         String NomeCompleto = tfdNome.getText();
-        int cont = 0, i;
+        String PrimeiroNome, UltimoNome;
+        int cont1 = 0, i, cont2 = 0;
         for( i = 0; i < NomeCompleto.length(); i++){
             if(NomeCompleto.charAt(i) == ' '){
-                cont++;
+                cont1++;
+                
+                cont2 = i;
+ 
             }
         }
-       Scanner sc = new Scanner (tfdNome.getText());
-        String sobrenome = sc.nextLine();
-        String[] array = sobrenome.split(" ");
-        sobrenome = array[array.length - 1];
+        PrimeiroNome = NomeCompleto.substring(0, cont2);
+        UltimoNome = NomeCompleto.substring(cont2, NomeCompleto.length());
         
-        
-   
-        String PrimeiroNome ="";
-        String[] arraynome = NomeCompleto.split(" ");
-        for( i = 1; i <cont; i++){
-            PrimeiroNome += arraynome[array.length + i];
+        String NomeCompletoOrientador = tfdOrientador.getText();
+        String NomeOrientador, SobrenomeOrientador;
+        cont1 = 0; i = 0; cont2 = 0;
+        for( i = 0; i < NomeCompletoOrientador.length(); i++){
+            if(NomeCompletoOrientador.charAt(i) == ' '){
+                cont1++;
+                
+                cont2 = i;
+ 
+            }
         }
-
+        NomeOrientador = NomeCompletoOrientador.substring(0, cont2);
+        SobrenomeOrientador = NomeCompletoOrientador.substring(cont2, NomeCompletoOrientador.length());
         
-        try {
-            pdf = File.createTempFile(tfdNome.getText()+" "+sobrenome,"");            
+        
+ 	try {
+            pdf = File.createTempFile(tfdNome.getText(),"");            
         } catch (IOException e1) {            
             e1.printStackTrace();
         }
-        
+
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivo PDF", "pdf");
 
         chooser = new JFileChooser();
@@ -699,13 +681,13 @@ public class PrincipalView extends javax.swing.JFrame {
         if (retorno==JFileChooser.APPROVE_OPTION){
             caminho = chooser.getSelectedFile().getAbsolutePath();
             
-            JOptionPane.showMessageDialog(null, "Salvo com sucesso!\nLocal:"+chooser.getSelectedFile().getAbsolutePath());
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso!\n\nLocal: "+chooser.getSelectedFile().getAbsolutePath()+"\n ");
         }
 
         PdfWriter.getInstance(doc, new FileOutputStream(caminho+".pdf"));
         doc.open();
         Font fonte = new Font(Font.FontFamily.TIMES_ROMAN, 11);
-        PdfPTable tabela = new PdfPTable(new float[]{0.01f, 0.90f});
+        PdfPTable tabela = new PdfPTable(new float[]{0f, 0.90f});
             
         tabela.setHorizontalAlignment(Element.ALIGN_CENTER);
         tabela.setWidthPercentage(100f);
@@ -722,14 +704,14 @@ public class PrincipalView extends javax.swing.JFrame {
         col1.setBorder(7);
             
             
-        String paragrafo = "\n"+sobrenome+", "+tfdNome.getText()+"\n"
+        String paragrafo = "\n"+UltimoNome+", "+PrimeiroNome+"\n"
                     +"      " +tfdTitulo.getText();
 
         if(!tfdSubTitulo.getText().equals("")){
                  paragrafo += ": "+ tfdSubTitulo.getText();
         }
              
-        paragrafo += " / "+tfdNome.getText() + " " + sobrenome;
+        paragrafo += " / "+tfdNome.getText() + " " + UltimoNome;
              
         if(ckxMaisAutores.isSelected()){
                  paragrafo += "... [et al.]";
@@ -744,16 +726,16 @@ public class PrincipalView extends javax.swing.JFrame {
              
             paragrafo += ". - Frutal, "+tfdAno.getText()+".";
             
-            paragrafo += "\n      "+tfdNumPaginas.getText()+" f.";                              // ATENÇÃO TALVEZ NAO TENHA NESSA LINHA UM \N
+            paragrafo += "\n      "+tfdNumPaginas.getText()+" f.";                              
             if(cbxIlustracao.getSelectedIndex() == 1){
                 paragrafo += " : il. ";
             }else if(cbxIlustracao.getSelectedIndex() == 2){
                 paragrafo += " : il. color.";
             }
             if(ckxOrientadora.isSelected()){
-                paragrafo += "\n      Orientadora: "+tfdOrientador.getText()+" "+tfdSobrenomeOrientador.getText()+"." ;
+                paragrafo += "\n      Orientadora: "+tfdOrientador.getText()+"." ;
             }else{
-                paragrafo += "\n      Orientador: "+tfdOrientador.getText()+" "+tfdSobrenomeOrientador.getText()+".";
+                paragrafo += "\n      Orientador: "+tfdOrientador.getText()+".";
             }
             
             if(!tfdCoorientador.getText().equals("")){
@@ -791,7 +773,7 @@ public class PrincipalView extends javax.swing.JFrame {
                 paragrafo += "3. "+tfdPalavra3.getText()+". ";
             }
             
-            paragrafo += "I. "+tfdSobrenomeOrientador.getText() +", "+tfdOrientador.getText()+".";
+            paragrafo += "I. "+SobrenomeOrientador +", "+NomeOrientador+".";
             paragrafo +=" II. "+tfdTitulo.getText()+".\n\n";
             Paragraph p3 = new Paragraph(paragrafo,fonte);
             p3.setAlignment(Element.ALIGN_JUSTIFIED);
@@ -804,14 +786,6 @@ public class PrincipalView extends javax.swing.JFrame {
             doc.add(tabela);
             
             doc.close();
-            
-            //JOptionPane.showMessageDialog(null, "Relatório de Funcionários salvo com sucesso em C:\\Ficha Catalografica");
-            //Desktop.getDesktop().open(new File(caminho));
-            doc.close();
-            
-      
-            
-            
      }
     
      public static DefaultFormatterFactory setFormatocutter(){  
@@ -826,6 +800,7 @@ public class PrincipalView extends javax.swing.JFrame {
         return factory;  
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnGerarFicha;
     private javax.swing.JComboBox<String> cbxCurso;
@@ -836,7 +811,6 @@ public class PrincipalView extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckxOrientadora;
     private javax.swing.ButtonGroup grupoBotao;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -844,8 +818,7 @@ public class PrincipalView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -855,7 +828,6 @@ public class PrincipalView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -874,8 +846,6 @@ public class PrincipalView extends javax.swing.JFrame {
     private javax.swing.JTextField tfdPalavra1;
     private javax.swing.JTextField tfdPalavra2;
     private javax.swing.JTextField tfdPalavra3;
-    private javax.swing.JTextField tfdSobrenome;
-    private javax.swing.JTextField tfdSobrenomeOrientador;
     private javax.swing.JTextField tfdSubTitulo;
     private javax.swing.JTextField tfdTitulo;
     // End of variables declaration//GEN-END:variables
