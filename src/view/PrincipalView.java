@@ -101,6 +101,7 @@ public class PrincipalView extends javax.swing.JFrame {
         cbxCurso.addItem("Curso de Geografia");
         cbxCurso.addItem("Curso de Sistemas de Informação");
         cbxCurso.addItem("Curso de Sucroalcooleiro");
+        cbxCurso.addItem("Curso de Tecnologia de Alimentos");
         cbxCurso.addItem("Pós Graduação em Agroecologia no Cerrado");
         cbxCurso.addItem("Pós Graduação Direito Civil e Processual Civil");
         
@@ -219,7 +220,7 @@ public class PrincipalView extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1.setText("*Nome Compledo do Autor 1:");
+        jLabel1.setText("*Nome Completo do Autor 1:");
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel9.setText("Nome Completo do Autor 2:");
@@ -291,7 +292,7 @@ public class PrincipalView extends javax.swing.JFrame {
         });
 
         ckxOrientadora.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        ckxOrientadora.setText("Orietadora");
+        ckxOrientadora.setText("Orientadora");
 
         jLabel21.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel21.setText("Nome completo do coorientador:");
@@ -359,6 +360,12 @@ public class PrincipalView extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel13.setText("*Numero de folhas:");
+
+        cbxCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxCursoActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel7.setText("*Curso:");
@@ -625,6 +632,10 @@ public class PrincipalView extends javax.swing.JFrame {
     private void tfdNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfdNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfdNomeActionPerformed
+
+    private void cbxCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxCursoActionPerformed
       public void gerarDocumento() throws IOException, DocumentException{
         
         File pdf = null;
@@ -711,7 +722,7 @@ public class PrincipalView extends javax.swing.JFrame {
                  paragrafo += ": "+ tfdSubTitulo.getText();
         }
              
-        paragrafo += " / "+tfdNome.getText() + " " + UltimoNome;
+        paragrafo += " / "+tfdNome.getText();
              
         if(ckxMaisAutores.isSelected()){
                  paragrafo += "... [et al.]";
