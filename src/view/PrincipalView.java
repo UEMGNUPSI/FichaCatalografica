@@ -23,6 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.stage.FileChooser;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -53,6 +54,10 @@ public class PrincipalView extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         colocaDicas();
         preencheComboBox();
+        
+        ImageIcon icone = new ImageIcon("C:/Users/NUPSI-04/Documents/NetBeansProjects/FichaCatalográficaSemBanco/src/view/imagens/ficha.png");
+        setIconImage(icone.getImage());
+
     }
 
 
@@ -88,6 +93,8 @@ public class PrincipalView extends javax.swing.JFrame {
        tfdNumPaginas.setToolTipText("Numero de páginas em seu trabalho.");
        cbxIlustracao.setToolTipText("Seu trabalho possui imagens?");
        cbxTrabalho.setToolTipText("Selecione o tipo do seu trabalho.");
+       cbxOrientador.setToolTipText("Esp = Especialização • Me. = Mestre • Ma. = Mestra • Dr. = Doutor • Dra. = Doutora • PHD = Pós Doutorado");
+       cbxCoorientador.setToolTipText("Esp = Especialização • Me. = Mestre • Ma. = Mestra • Dr. = Doutor • Dra. = Doutora • PHD = Pós Doutorado");
        
     }
     
@@ -112,6 +119,21 @@ public class PrincipalView extends javax.swing.JFrame {
         cbxTrabalho.addItem("Especialização - Lato Sensu");
         cbxTrabalho.addItem("Licenciatura");
         cbxTrabalho.addItem("Tecnólogo");
+        
+        //Prenche ComboBox Orientador e Coorientador
+        cbxOrientador.addItem("Esp.");
+        cbxOrientador.addItem("Me.");
+        cbxOrientador.addItem("Ma.");
+        cbxOrientador.addItem("Dr.");
+        cbxOrientador.addItem("Dra.");
+        cbxOrientador.addItem("PHD");
+        
+        cbxCoorientador.addItem("Esp.");
+        cbxCoorientador.addItem("Me.");
+        cbxCoorientador.addItem("Ma.");
+        cbxCoorientador.addItem("Dr.");
+        cbxCoorientador.addItem("Dra.");
+        cbxCoorientador.addItem("PHD");
 
     }
     
@@ -142,6 +164,8 @@ public class PrincipalView extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         tfdCoorientador = new javax.swing.JTextField();
         ckxCoorientadora = new javax.swing.JCheckBox();
+        cbxOrientador = new javax.swing.JComboBox();
+        cbxCoorientador = new javax.swing.JComboBox();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         tfdTitulo = new javax.swing.JTextField();
@@ -308,35 +332,44 @@ public class PrincipalView extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cbxOrientador, 0, 43, Short.MAX_VALUE)
+                    .addComponent(cbxCoorientador, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(tfdOrientador, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ckxOrientadora))
-                    .addComponent(jLabel21)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfdOrientador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tfdCoorientador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ckxCoorientadora)
+                            .addComponent(ckxOrientadora)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(tfdCoorientador, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ckxCoorientadora))
-                    .addComponent(jLabel20))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel21))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel20)
-                .addGap(6, 6, 6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfdOrientador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ckxOrientadora))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ckxOrientadora)
+                    .addComponent(cbxOrientador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 11, Short.MAX_VALUE)
                 .addComponent(jLabel21)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfdCoorientador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ckxCoorientadora))
-                .addContainerGap(31, Short.MAX_VALUE))
+                    .addComponent(ckxCoorientadora)
+                    .addComponent(cbxCoorientador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(10, 154, 193)), "Informações do Trabalho", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
@@ -359,7 +392,7 @@ public class PrincipalView extends javax.swing.JFrame {
         jLabel6.setText("*Trabalho:");
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel13.setText("*Numero de folhas:");
+        jLabel13.setText("*Número de folhas:");
 
         cbxCurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -655,7 +688,7 @@ public class PrincipalView extends javax.swing.JFrame {
             }
         }
         PrimeiroNome = NomeCompleto.substring(0, cont2);
-        UltimoNome = NomeCompleto.substring(cont2, NomeCompleto.length());
+        UltimoNome = NomeCompleto.substring(cont2+1, NomeCompleto.length());
         
         String NomeCompletoOrientador = tfdOrientador.getText();
         String NomeOrientador, SobrenomeOrientador;
@@ -669,7 +702,7 @@ public class PrincipalView extends javax.swing.JFrame {
             }
         }
         NomeOrientador = NomeCompletoOrientador.substring(0, cont2);
-        SobrenomeOrientador = NomeCompletoOrientador.substring(cont2, NomeCompletoOrientador.length());
+        SobrenomeOrientador = NomeCompletoOrientador.substring(cont2+1, NomeCompletoOrientador.length());
         
         
  	try {
@@ -714,6 +747,7 @@ public class PrincipalView extends javax.swing.JFrame {
         PdfPCell col1 = new PdfPCell(p1);
         col1.setBorder(7);
             
+        
             
         String paragrafo = "\n"+UltimoNome+", "+PrimeiroNome+"\n"
                     +"      " +tfdTitulo.getText();
@@ -744,16 +778,16 @@ public class PrincipalView extends javax.swing.JFrame {
                 paragrafo += " : il. color.";
             }
             if(ckxOrientadora.isSelected()){
-                paragrafo += "\n      Orientadora: "+tfdOrientador.getText()+"." ;
+                paragrafo += "\n      Orientadora: "+cbxOrientador.getSelectedItem()+" "+tfdOrientador.getText()+"." ;
             }else{
-                paragrafo += "\n      Orientador: "+tfdOrientador.getText()+".";
+                paragrafo += "\n      Orientador: "+cbxOrientador.getSelectedItem()+" "+tfdOrientador.getText()+".";
             }
             
             if(!tfdCoorientador.getText().equals("")){
                 if(ckxCoorientadora.isSelected()){
-                    paragrafo += "\n      Coorientadora: "+tfdCoorientador.getText()+"." ;
+                    paragrafo += "\n      Coorientadora: "+cbxCoorientador.getSelectedItem()+" "+tfdCoorientador.getText()+"." ;
                 }else{
-                    paragrafo += "\n      Coorientador: "+tfdCoorientador.getText()+".";
+                    paragrafo += "\n      Coorientador: "+cbxCoorientador.getSelectedItem()+" "+tfdCoorientador.getText()+".";
                 } 
             }
 
@@ -814,8 +848,10 @@ public class PrincipalView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnGerarFicha;
+    private javax.swing.JComboBox cbxCoorientador;
     private javax.swing.JComboBox<String> cbxCurso;
     private javax.swing.JComboBox<String> cbxIlustracao;
+    private javax.swing.JComboBox cbxOrientador;
     private javax.swing.JComboBox<String> cbxTrabalho;
     private javax.swing.JCheckBox ckxCoorientadora;
     private javax.swing.JCheckBox ckxMaisAutores;
