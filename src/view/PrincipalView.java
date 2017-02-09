@@ -55,8 +55,10 @@ public class PrincipalView extends javax.swing.JFrame {
         colocaDicas();
         preencheComboBox();
         
-        ImageIcon icone = new ImageIcon("C:/Users/NUPSI-04/Documents/NetBeansProjects/FichaCatalográficaSemBanco/src/view/imagens/ficha.png");
+        
+        ImageIcon icone = new ImageIcon("C:/Users/NUPSI-04/Documents/NetBeansProjects/FichaCatalográficaSemBanco/src/view/imagens/icon.png");
         setIconImage(icone.getImage());
+
 
     }
 
@@ -731,7 +733,7 @@ public class PrincipalView extends javax.swing.JFrame {
         PdfWriter.getInstance(doc, new FileOutputStream(caminho+".pdf"));
         doc.open();
         Font fonte = new Font(Font.FontFamily.TIMES_ROMAN, 11);
-        PdfPTable tabela = new PdfPTable(new float[]{0f, 0.90f});
+        PdfPTable tabela = new PdfPTable(new float[]{0.08f, 0.90f});
             
         tabela.setHorizontalAlignment(Element.ALIGN_CENTER);
         tabela.setWidthPercentage(100f);
