@@ -56,10 +56,8 @@ public class PrincipalView extends javax.swing.JFrame {
         preencheComboBox();
         
         
-        ImageIcon icone = new ImageIcon("C:/Users/NUPSI-04/Documents/NetBeansProjects/FichaCatalográficaSemBanco/src/view/imagens/icon.png");
+        ImageIcon icone = new ImageIcon("C:/Users/NUPSI-04/Documents/NetBeansProjects/FichaCatalográficaSemBanco/src/view/imagens/iconInterno.png");
         setIconImage(icone.getImage());
-
-
     }
 
 

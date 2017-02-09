@@ -12,13 +12,13 @@ import view.PrincipalView;
  *
  * @author Leopo
  */
-public class FichaCatalograficaSemBanco {
+public class Ficha_Catalografica {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    new FichaCatalograficaSemBanco().executar();
+    new Ficha_Catalografica().executar();
     try {
         for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
             if ("Windows".equals(info.getName())) {
