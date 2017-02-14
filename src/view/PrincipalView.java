@@ -194,6 +194,7 @@ public class PrincipalView extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ficha Catalográfica");
 
         pnlFichaCalatografica.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(10, 154, 193)), "Módulo de Ficha Catalográfica", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
         pnlFichaCalatografica.setPreferredSize(new java.awt.Dimension(1014, 400));
@@ -611,7 +612,7 @@ public class PrincipalView extends javax.swing.JFrame {
 
         pnlComGuia.addTab("MFC", pnlFichaCalatografica);
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/SobreDefin.png"))); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/Sobre.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlSobreLayout = new javax.swing.GroupLayout(pnlSobre);
         pnlSobre.setLayout(pnlSobreLayout);
@@ -621,9 +622,7 @@ public class PrincipalView extends javax.swing.JFrame {
         );
         pnlSobreLayout.setVerticalGroup(
             pnlSobreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlSobreLayout.createSequentialGroup()
-                .addComponent(jLabel18)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 479, Short.MAX_VALUE)
         );
 
         pnlComGuia.addTab("Sobre", null, pnlSobre, "");
