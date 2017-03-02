@@ -73,7 +73,7 @@ public class PrincipalView extends javax.swing.JFrame {
          tfdCoorientador.setDocument(new LimiteDigitos(40));
          tfdPalavra1.setDocument(new LimiteDigitos(25));
          tfdPalavra2.setDocument(new LimiteDigitos(25));
-         tfdPalavra3.setDocument(new LimiteDigitos(25));
+         tfdPalavra3.setDocument(new LimiteDigitos(24));
     }
     
     public void colocaDicas(){
