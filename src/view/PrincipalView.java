@@ -66,14 +66,14 @@ public class PrincipalView extends javax.swing.JFrame {
          tfdNome.setDocument(new LimiteDigitos(40));
          tfdAutor2.setDocument(new LimiteDigitos(40));
          tfdAutor3.setDocument(new LimiteDigitos(40));
-         tfdTitulo.setDocument(new LimiteDigitos(60));
-         tfdSubTitulo.setDocument(new LimiteDigitos(60));
+         tfdTitulo.setDocument(new LimiteDigitos(90));
+         tfdSubTitulo.setDocument(new LimiteDigitos(90));
          tfdNumPaginas.setDocument(new LimiteDigitos(4));
          tfdOrientador.setDocument(new LimiteDigitos(40));
          tfdCoorientador.setDocument(new LimiteDigitos(40));
-         tfdPalavra1.setDocument(new LimiteDigitos(15));
-         tfdPalavra2.setDocument(new LimiteDigitos(15));
-         tfdPalavra3.setDocument(new LimiteDigitos(15));
+         tfdPalavra1.setDocument(new LimiteDigitos(25));
+         tfdPalavra2.setDocument(new LimiteDigitos(25));
+         tfdPalavra3.setDocument(new LimiteDigitos(25));
     }
     
     public void colocaDicas(){
