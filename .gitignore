@@ -1,6 +1,4 @@
 /dist/
 *.class
-private.properties
-private.xlm
 /nbproject/private/
 /build/
