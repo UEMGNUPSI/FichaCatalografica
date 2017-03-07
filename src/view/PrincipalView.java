@@ -63,17 +63,17 @@ public class PrincipalView extends javax.swing.JFrame {
 
 
     public void LimitaDigitos(){
-         tfdNome.setDocument(new LimiteDigitos(40));
-         tfdAutor2.setDocument(new LimiteDigitos(40));
-         tfdAutor3.setDocument(new LimiteDigitos(40));
-         tfdTitulo.setDocument(new LimiteDigitos(90));
-         tfdSubTitulo.setDocument(new LimiteDigitos(90));
+         tfdNome.setDocument(new LimiteDigitos(55));
+         tfdAutor2.setDocument(new LimiteDigitos(55));
+         tfdAutor3.setDocument(new LimiteDigitos(55));
+         tfdTitulo.setDocument(new LimiteDigitos(160));
+         tfdSubTitulo.setDocument(new LimiteDigitos(100));
          tfdNumPaginas.setDocument(new LimiteDigitos(4));
          tfdOrientador.setDocument(new LimiteDigitos(40));
          tfdCoorientador.setDocument(new LimiteDigitos(40));
-         tfdPalavra1.setDocument(new LimiteDigitos(25));
-         tfdPalavra2.setDocument(new LimiteDigitos(25));
-         tfdPalavra3.setDocument(new LimiteDigitos(24));
+         tfdPalavra1.setDocument(new LimiteDigitos(40));
+         tfdPalavra2.setDocument(new LimiteDigitos(40));
+         tfdPalavra3.setDocument(new LimiteDigitos(40));
     }
     
     public void colocaDicas(){
@@ -905,7 +905,7 @@ public class PrincipalView extends javax.swing.JFrame {
             }
             
             paragrafo += "I. "+SobrenomeOrientador +", "+NomeOrientador+".";
-            paragrafo +=" II. "+tfdTitulo.getText()+".\n\n";
+            paragrafo +=" II. Título.\n\n";
             Paragraph p3 = new Paragraph(paragrafo,fonte);
             p3.setAlignment(Element.ALIGN_JUSTIFIED);
             PdfPCell col3 = new PdfPCell(p3);
