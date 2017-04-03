@@ -49,6 +49,7 @@ public class PrincipalView extends javax.swing.JFrame {
     FichaM ficha = new FichaM();
     Document doc;
     String caminho;
+    
     public PrincipalView() {
         initComponents();
         this.setVisible(true);
@@ -93,6 +94,9 @@ public class PrincipalView extends javax.swing.JFrame {
        cbxTrabalho.setToolTipText("Selecione o tipo do seu trabalho.");
        cbxOrientador.setToolTipText("Esp = Especialização • Me. = Mestre • Ma. = Mestra • Dr. = Doutor • Dra. = Doutora • PHD = Pós Doutorado");
        cbxCoorientador.setToolTipText("Esp = Especialização • Me. = Mestre • Ma. = Mestra • Dr. = Doutor • Dra. = Doutora • PHD = Pós Doutorado");
+       tfdPalavra1.setToolTipText("Digite uma palavra chave relacionada ao projeto. Exemplo: Jogos");
+       tfdPalavra2.setToolTipText("Digite uma palavra chave que não tenha usado em outro campo de palavras chaves. Exemplo: Realidade Aumentada");
+       tfdPalavra3.setToolTipText("Digite uma palavra chave que não tenha usado em outro campo de palavras chaves. Exemplo: Computadores");
        
     }
     
@@ -330,12 +334,22 @@ public class PrincipalView extends javax.swing.JFrame {
                 OrientadorMascMouseClicked(evt);
             }
         });
+        OrientadorMasc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrientadorMascActionPerformed(evt);
+            }
+        });
 
         OrientadorFem.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         OrientadorFem.setText("Feminino");
         OrientadorFem.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 OrientadorFemMouseClicked(evt);
+            }
+        });
+        OrientadorFem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrientadorFemActionPerformed(evt);
             }
         });
 
@@ -346,12 +360,22 @@ public class PrincipalView extends javax.swing.JFrame {
                 CoorientadorMascMouseClicked(evt);
             }
         });
+        CoorientadorMasc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CoorientadorMascActionPerformed(evt);
+            }
+        });
 
         CoorientadorFem.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         CoorientadorFem.setText("Feminino");
         CoorientadorFem.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CoorientadorFemMouseClicked(evt);
+            }
+        });
+        CoorientadorFem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CoorientadorFemActionPerformed(evt);
             }
         });
 
@@ -456,6 +480,11 @@ public class PrincipalView extends javax.swing.JFrame {
         }
 
         tfdNumPaginas.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        tfdNumPaginas.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tfdNumPaginasFocusGained(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel11.setText("*Ilustrações:");
@@ -497,7 +526,7 @@ public class PrincipalView extends javax.swing.JFrame {
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(10, 10, 10)
-                                .addComponent(tfdAno, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tfdAno, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -522,7 +551,7 @@ public class PrincipalView extends javax.swing.JFrame {
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel13)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tfdNumPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(tfdNumPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -737,19 +766,47 @@ public class PrincipalView extends javax.swing.JFrame {
 
     private void OrientadorMascMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrientadorMascMouseClicked
     OrientadorFem.setSelected(false);
+    if(OrientadorFem.isSelected() == true){
+    OrientadorFem.setSelected(false);}
     }//GEN-LAST:event_OrientadorMascMouseClicked
 
     private void OrientadorFemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrientadorFemMouseClicked
-    OrientadorMasc.setSelected(false);    // TODO add your handling code here:
+    OrientadorMasc.setSelected(false);  
+    if(OrientadorMasc.isSelected() == true){
+    OrientadorMasc.setSelected(false);}// TODO add your handling code here:
     }//GEN-LAST:event_OrientadorFemMouseClicked
 
     private void CoorientadorMascMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CoorientadorMascMouseClicked
     CoorientadorFem.setSelected(false);
+    if(CoorientadorFem.isSelected() == true){
+    CoorientadorFem.setSelected(false);}
     }//GEN-LAST:event_CoorientadorMascMouseClicked
 
     private void CoorientadorFemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CoorientadorFemMouseClicked
     CoorientadorMasc.setSelected(false);
+    if(CoorientadorMasc.isSelected() == true){
+    CoorientadorMasc.setSelected(false);}
     }//GEN-LAST:event_CoorientadorFemMouseClicked
+
+    private void OrientadorMascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrientadorMascActionPerformed
+    OrientadorFem.setSelected(false);    // TODO add your handling code here:
+    }//GEN-LAST:event_OrientadorMascActionPerformed
+
+    private void OrientadorFemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrientadorFemActionPerformed
+    OrientadorMasc.setSelected(false);    // TODO add your handling code here:
+    }//GEN-LAST:event_OrientadorFemActionPerformed
+
+    private void CoorientadorMascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CoorientadorMascActionPerformed
+    CoorientadorFem.setSelected(false);    // TODO add your handling code here:
+    }//GEN-LAST:event_CoorientadorMascActionPerformed
+
+    private void CoorientadorFemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CoorientadorFemActionPerformed
+    CoorientadorMasc.setSelected(false);    // TODO add your handling code here:
+    }//GEN-LAST:event_CoorientadorFemActionPerformed
+
+    private void tfdNumPaginasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfdNumPaginasFocusGained
+        
+    }//GEN-LAST:event_tfdNumPaginasFocusGained
       public void gerarDocumento() throws IOException, DocumentException{
         
         File pdf = null;
